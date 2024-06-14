@@ -128,14 +128,14 @@ Napi::Value moveMouseSmoothWrapper(const Napi::CallbackInfo& info)
 		Napi::Error::New(env, "Invalid number of arguments.").ThrowAsJavaScriptException();
 return env.Null();
 	}
-	size_t x = info[0].As<Napi::Number>().Int32Value();
-	size_t y = info[1].As<Napi::Number>().Int32Value();
+	int32_t x = info[0].As<Napi::Number>().Int32Value();
+	int32_t y = info[1].As<Napi::Number>().Int32Value();
 
 	MMPoint point;
 	point = MMPointMake(x, y);
 	if (info.Length() == 3)
 	{
-		size_t speed = info[2].As<Napi::Number>().Int32Value();
+		int32_t speed = info[2].As<Napi::Number>().Int32Value();
 		smoothlyMoveMouse(point, speed);
 	}
 	else
@@ -643,7 +643,7 @@ Napi::Value unicodeTapWrapper(const Napi::CallbackInfo& info)
 {
 	Napi::Env env = info.Env();
 
-	size_t value = info[0].As<Napi::Number>().Int32Value();
+	int32_t value = info[0].As<Napi::Number>().Int32Value();
 
 	if (value != 0) {
 		unicodeTap(value);
@@ -684,7 +684,7 @@ Napi::Value typeStringDelayedWrapper(const Napi::CallbackInfo& info)
 
 		s = str.c_str();
 
-	size_t cpm = info[1].As<Napi::Number>().Int32Value();
+	int32_t cpm = info[1].As<Napi::Number>().Int32Value();
 
 		typeStringDelayed(s, cpm);
 
@@ -744,8 +744,8 @@ return env.Null();
 	MMBitmapRef bitmap;
 	MMRGBHex color;
 
-	size_t x = info[0].As<Napi::Number>().Int32Value();
-	size_t y = info[1].As<Napi::Number>().Int32Value();
+	int32_t x = info[0].As<Napi::Number>().Int32Value();
+	int32_t y = info[1].As<Napi::Number>().Int32Value();
 
 	if (!pointVisibleOnMainDisplay(MMPointMake(x, y)))
 	{
@@ -812,10 +812,10 @@ Napi::Value setXDisplayNameWrapper(const Napi::CallbackInfo& info)
 Napi::Value captureScreenWrapper(const Napi::CallbackInfo& info)
 {
 	Napi::Env env = info.Env();
-	size_t x;
-	size_t y;
-	size_t w;
-	size_t h;
+	int32_t x;
+	int32_t y;
+	int32_t w;
+	int32_t h;
 
 	//If user has provided screen coords, use them!
 	if (info.Length() == 4)
@@ -868,9 +868,9 @@ Napi::Value captureScreenWrapper(const Napi::CallbackInfo& info)
 class BMP
 {
 	public:
-		size_t width;
-		size_t height;
-		size_t byteWidth;
+		int32_t width;
+		int32_t height;
+		int32_t byteWidth;
 		uint8_t bitsPerPixel;
 		uint8_t bytesPerPixel;
 		uint8_t *image;
@@ -902,8 +902,8 @@ Napi::Value getColorWrapper(const Napi::CallbackInfo& info)
 	MMBitmapRef bitmap;
 	MMRGBHex color;
 
-	size_t x = info[1].As<Napi::Number>().Int32Value();
-	size_t y = info[2].As<Napi::Number>().Int32Value();
+	int32_t x = info[1].As<Napi::Number>().Int32Value();
+	int32_t y = info[2].As<Napi::Number>().Int32Value();
 
 	//Get our image object from JavaScript.
 	BMP img = buildBMP(info[0].ToObject());
