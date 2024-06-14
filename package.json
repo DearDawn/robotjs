@@ -1,7 +1,7 @@
 {
   "name": "@tangjingchun/robotjs",
-  "version": "0.7.14",
-  "description": "Node.js Desktop Automation.",
+  "version": "0.7.15",
+  "description": "Node.js Desktop Automation. mouse event support multi Screen Mode",
   "main": "index.js",
   "typings": "index.d.ts",
   "scripts": {

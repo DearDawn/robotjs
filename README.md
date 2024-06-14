@@ -1,8 +1,6 @@
 # Important note
 
-**forkVersion, and support multi Screen Mode**
-
-
+**forkVersion of @jitsi/robotjs, but the mouse event support multi Screen Mode**
 
 This repository is a fork of the original robotjs so we can generate prebuilt packages. All changes have been upstreamed, and should they be applied and prebuilt packages provided this fork shall be abandoned.
 
