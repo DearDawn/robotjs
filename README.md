@@ -1,5 +1,9 @@
 # Important note
 
+**forkVersion, and support multi Screen Mode**
+
+
+
 This repository is a fork of the original robotjs so we can generate prebuilt packages. All changes have been upstreamed, and should they be applied and prebuilt packages provided this fork shall be abandoned.
 
 <p align="center"><img src="https://cldup.com/1ATDf2JMtv.png"></p>
@@ -34,6 +38,7 @@ Install RobotJS using npm:
 ```
 npm install @jitsi/robotjs
 ```
+
 It's that easy! npm will download one of the prebuilt [binaries](https://github.com/jitsi/robotjs/releases/latest) for your OS.
 
 You can get npm [here](https://nodejs.org/en/download/) if you don't have it installed.
@@ -91,11 +96,12 @@ var mouse = robot.getMousePos();
 var hex = robot.getPixelColor(mouse.x, mouse.y);
 console.log("#" + hex + " at x:" + mouse.x + " y:" + mouse.y);
 ```
+
 Read the [Wiki](https://github.com/octalmage/robotjs/wiki) for more information!
 
 ## [API](http://robotjs.io/docs/syntax)
 
-The RobotJS API is hosted at <https://robotjs.io/docs/syntax>.
+The RobotJS API is hosted at [https://robotjs.io/docs/syntax](https://robotjs.io/docs/syntax).
 
 ## Building
 
@@ -135,24 +141,24 @@ See the [node-gyp readme](https://github.com/nodejs/node-gyp#installation) for m
 
 ## Progress
 
-| Module        | Status        | Notes   |
-| ------------- |-------------: | ------- |
-| Mouse         | 100%           | All planned features implemented.       |
-| Keyboard      | 100%           | All planned features implemented.       |
-| Screen        | 85%            | Image search, pixel search. |
-| Bitmap        | 0%             |  Saving/opening, png support.  |
+| Module   | Status | Notes                             |
+| -------- | -----: | --------------------------------- |
+| Mouse    |   100% | All planned features implemented. |
+| Keyboard |   100% | All planned features implemented. |
+| Screen   |    85% | Image search, pixel search.       |
+| Bitmap   |     0% | Saving/opening, png support.      |
 
 ## FAQ
 
-#### Does RobotJS support global hotkeys? 
+#### Does RobotJS support global hotkeys?
 
-Not currently, and I don't know if it ever will. I personally use [Electron](http://electron.atom.io/)/[NW.js](http://nwjs.io/) for global hotkeys, and this works well. Later on I might add hotkey support or create a separate module. See [#55](https://github.com/octalmage/robotjs/issues/55) for details. 
+Not currently, and I don't know if it ever will. I personally use [Electron](http://electron.atom.io/)/[NW.js](http://nwjs.io/) for global hotkeys, and this works well. Later on I might add hotkey support or create a separate module. See [#55](https://github.com/octalmage/robotjs/issues/55) for details.
 
-#### Can I take a screenshot with RobotJS? 
+#### Can I take a screenshot with RobotJS?
 
-Soon! This is a bit more complicated than the rest of the features, so I saved it for last. Luckily the code is already there, I just need to write the bindings, and I've already started. Subscribe to [#13](https://github.com/octalmage/robotjs/issues/13) for updates. 
+Soon! This is a bit more complicated than the rest of the features, so I saved it for last. Luckily the code is already there, I just need to write the bindings, and I've already started. Subscribe to [#13](https://github.com/octalmage/robotjs/issues/13) for updates.
 
-#### Why is &#60;insert key&#62; missing from the keyboard functions? 
+#### Why is &#60;insert key&#62; missing from the keyboard functions?
 
 We've been implementing keys as we need them. Feel free to create an issue or submit a pull request!
 
@@ -164,11 +170,11 @@ For any other questions please [submit an issue](https://github.com/octalmage/ro
 
 ## Story
 
-I'm a huge fan of [AutoHotkey](https://www.autohotkey.com/), and I've used it for a very long time. AutoHotkey is great for automation and it can do a bunch of things that are very difficult in other languages. For example, it's [imagesearch](https://www.autohotkey.com/docs/commands/ImageSearch.htm) and [pixel](https://www.autohotkey.com/docs/commands/PixelGetColor.htm) related functions are hard to reproduce on Mac, especially in scripting languages. These functions are great for automating apps that can't be automated like [Netflix](http://blueshirtdesign.com/apps/autoflix/). This has never been a big deal since I've always used Windows at work, but for the past few years I've been using Mac exclusively. 
+I'm a huge fan of [AutoHotkey](https://www.autohotkey.com/), and I've used it for a very long time. AutoHotkey is great for automation and it can do a bunch of things that are very difficult in other languages. For example, it's [imagesearch](https://www.autohotkey.com/docs/commands/ImageSearch.htm) and [pixel](https://www.autohotkey.com/docs/commands/PixelGetColor.htm) related functions are hard to reproduce on Mac, especially in scripting languages. These functions are great for automating apps that can't be automated like [Netflix](http://blueshirtdesign.com/apps/autoflix/). This has never been a big deal since I've always used Windows at work, but for the past few years I've been using Mac exclusively.
 
-I like AutoHotkey, but I like Node.js more. By developing RobotJS I get an AutoHotkey replacement on Mac (finally!), and I get to use my favorite language. 
+I like AutoHotkey, but I like Node.js more. By developing RobotJS I get an AutoHotkey replacement on Mac (finally!), and I get to use my favorite language.
 
-**TLDR:** There's nothing like AutoHotkey on Mac, so I'm making it. 
+**TLDR:** There's nothing like AutoHotkey on Mac, so I'm making it.
 
 ## Publishing
 
@@ -180,5 +186,5 @@ If a major or minor release is required, use respective key words in the commit 
 
 MIT
 
-Based on [autopy](https://github.com/msanders/autopy). 
+Based on [autopy](https://github.com/msanders/autopy).
 Maintained by [Jason Stallings](http://jason.stallin.gs).
